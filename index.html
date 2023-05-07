@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="/css/main.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="js/qrious.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.js" defer></script>
@@ -12,9 +12,9 @@
       tailwind.config = {
         theme: {
           extend: {
-            fontFamily: {
-              sans: ["Poppins", sans - serif],
-            },
+            // fontFamily: {
+            //   sans: ["Poppins", sans - serif],
+            // },
           },
         },
       };
@@ -98,7 +98,7 @@
         class="absolute top-0 z-4 px-6 left-0 w-full h-full flex justify-center align-center hidden">
         
         <div id="qrcode" class="m-auto bg-white rounded lg:h-auto py-8 lg:w-auto lg:px-12 w-full">
-            <p class="flex align-end justify-end cursor-pointer text-2xl text-red-400" id="close">x</p>
+            <p class="flex align-end justify-end cursor-pointer text-2xl text-red-400 px-6" id="close">x</p>
             <canvas id="qr" class="m-auto mt-5"></canvas>
             <div id="download" class="bg-gray-600 text-center m-auto rounded flex justify-center self-center align-center w-[200px] text-red-400 hover:text-white py-3 px-4 mt-5 hover:bg-red-400">
                 Save image
