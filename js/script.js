@@ -1,7 +1,6 @@
 const form = document.getElementById("url-form");
 const url = document.getElementById("inputtedUrl");
 const size = document.getElementById("QRSize");
-const qrcode = document.getElementById("qrcode");
 
 form.addEventListener("submit", (event) => {
     event.preventDefault();
@@ -44,6 +43,19 @@ const generateQRCode = (url, size) => {
 document.getElementById("close").addEventListener("click", () => {
     togglePopup();
 })
+
+document.getElementById("download").addEventListener("click", () => {
+    const screenshotTarget = document.getElementById("qr");
+
+    html2canvas(screenshotTarget).then((canvas) => {
+        const base64image = canvas.toDataURL("image/png");
+        var anchor = document.createElement("a");
+        anchor.setAttribute("href", base64image);
+        anchor.setAttribute("download", "QRCode.png");
+        anchor.click();
+        anchor.remove();
+    });
+});
 
 const togglePopup = () => {
     document.getElementById("popup").classList.toggle("hidden");
